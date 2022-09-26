@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{{user_name}}의 정보</title>
+</head>
+<body>
+    <header class="container">
+        <h1><a href="..">hp.gg</a></h1>
+    </header>
+    <main class="container">
+        <span>
+            <span>
+                <h5>개인/2인 랭크</h5>
+                <div class="content">
+                    {% if tier == 'Iron' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Iron.png') }}" width="72" alt="Iron"/>
+                    {% elif tier == 'Bronze' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Bronze.png') }}" width="72" alt="Bronze"/>
+                    {% elif tier == 'Silver' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Silver.png') }}" width="72" alt="Silver"/>
+                    {% elif tier == 'Gold' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Gold.png') }}" width="72" alt="Gold"/>
+                    {% elif tier == 'Platinum' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Platinum.png') }}" width="72" alt="Platinum"/>
+                    {% elif tier == 'Diamond' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Diamond.png') }}" width="72" alt="Diamond"/>
+                    {% elif tier == 'Master' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Master.png') }}" width="72" alt="Master"/>
+                    {% elif tier == 'Grandmaster' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Grandmaster.png') }}" width="72" alt="Grandmaster"/>
+                    {% elif tier == 'Challenger' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Challenger.png') }}" width="72" alt="Challenger"/>
+                    {% endif %}
+                    <h6>{{tier}} {{rank}}</h6>
+                </div>
+            </span>
+            
+            
+            <span>
+                <span>자유 랭크</span>
+            </span>
+        </span>
+        
+    </main>
+</body>
+</html>
