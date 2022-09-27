@@ -17,32 +17,56 @@
             <span>
                 <h5>개인/2인 랭크</h5>
                 <div class="content">
-                    {% if tier == 'Iron' %}
+                    {% if solo_tier == 'Iron' %}
                         <img src="{{ url_for('static', filename='tier_emblems/Emblem_Iron.png') }}" width="72" alt="Iron"/>
-                    {% elif tier == 'Bronze' %}
+                    {% elif solo_tier == 'Bronze' %}
                         <img src="{{ url_for('static', filename='tier_emblems/Emblem_Bronze.png') }}" width="72" alt="Bronze"/>
-                    {% elif tier == 'Silver' %}
+                    {% elif solo_tier == 'Silver' %}
                         <img src="{{ url_for('static', filename='tier_emblems/Emblem_Silver.png') }}" width="72" alt="Silver"/>
-                    {% elif tier == 'Gold' %}
+                    {% elif solo_tier == 'Gold' %}
                         <img src="{{ url_for('static', filename='tier_emblems/Emblem_Gold.png') }}" width="72" alt="Gold"/>
-                    {% elif tier == 'Platinum' %}
+                    {% elif solo_tier == 'Platinum' %}
                         <img src="{{ url_for('static', filename='tier_emblems/Emblem_Platinum.png') }}" width="72" alt="Platinum"/>
-                    {% elif tier == 'Diamond' %}
+                    {% elif solo_tier == 'Diamond' %}
                         <img src="{{ url_for('static', filename='tier_emblems/Emblem_Diamond.png') }}" width="72" alt="Diamond"/>
-                    {% elif tier == 'Master' %}
+                    {% elif solo_tier == 'Master' %}
                         <img src="{{ url_for('static', filename='tier_emblems/Emblem_Master.png') }}" width="72" alt="Master"/>
-                    {% elif tier == 'Grandmaster' %}
+                    {% elif solo_tier == 'Grandmaster' %}
                         <img src="{{ url_for('static', filename='tier_emblems/Emblem_Grandmaster.png') }}" width="72" alt="Grandmaster"/>
-                    {% elif tier == 'Challenger' %}
+                    {% elif solo_tier == 'Challenger' %}
                         <img src="{{ url_for('static', filename='tier_emblems/Emblem_Challenger.png') }}" width="72" alt="Challenger"/>
                     {% endif %}
-                    <h6>{{tier}} {{rank}}</h6>
+                    <p>{{solo_tier}} {{solo_rank}}</p>
+                    <p>{{solo_wins}}승 {{solo_losses}}패</p>
                 </div>
             </span>
             
             
             <span>
-                <span>자유 랭크</span>
+                <h5>자유 랭크</h5>
+                <div class="content">
+                    {% if team_tier == 'Iron' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Iron.png') }}" width="72" alt="Iron"/>
+                    {% elif team_tier == 'Bronze' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Bronze.png') }}" width="72" alt="Bronze"/>
+                    {% elif team_tier == 'Silver' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Silver.png') }}" width="72" alt="Silver"/>
+                    {% elif team_tier == 'Gold' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Gold.png') }}" width="72" alt="Gold"/>
+                    {% elif team_tier == 'Platinum' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Platinum.png') }}" width="72" alt="Platinum"/>
+                    {% elif team_tier == 'Diamond' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Diamond.png') }}" width="72" alt="Diamond"/>
+                    {% elif team_tier == 'Master' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Master.png') }}" width="72" alt="Master"/>
+                    {% elif team_tier == 'Grandmaster' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Grandmaster.png') }}" width="72" alt="Grandmaster"/>
+                    {% elif team_tier == 'Challenger' %}
+                        <img src="{{ url_for('static', filename='tier_emblems/Emblem_Challenger.png') }}" width="72" alt="Challenger"/>
+                    {% endif %}
+                    <p>{{team_tier}} {{team_rank}}</p>
+                    <p>{{team_wins}}승 {{team_losses}}패</p>
+                </div>
             </span>
         </span>
         
