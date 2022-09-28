@@ -21,12 +21,16 @@ def extract_entries(summoner_id):
     if len(response_json) == 1:
         if response_json[0]['queueType'] == 'RANKED_SOLO_5x5':
             return ["Solo-only", response_json[0]['tier'], response_json[0]['rank'], response_json[0]['wins'], response_json[0]['losses']]
-        if response_json[0]['queueType'] == 'RANKED_TEAM_5x5':
+        if response_json[0]['queueType'] == 'RANKED_FLEX_SR':
             return ["Team-only", response_json[0]['tier'], response_json[0]['rank'], response_json[0]['wins'], response_json[0]['losses']]
     
     if len(response_json) == 2:
-        ["Both", response_json[0]['tier'], response_json[0]['rank'], response_json[0]['wins'], response_json[0]['losses'],
-        response_json[1]['tier'], response_json[1]['rank'], response_json[1]['wins'], response_json[1]['losses']]
+        if response_json[0]["queueType"] == "'RANKED_SOLO_5x5'":
+            return ["Both", response_json[0]['tier'], response_json[0]['rank'], response_json[0]['wins'], response_json[0]['losses'],
+            response_json[1]['tier'], response_json[1]['rank'], response_json[1]['wins'], response_json[1]['losses']]
+        else:
+            return ["Both", response_json[1]['tier'], response_json[1]['rank'], response_json[1]['wins'], response_json[1]['losses'],
+            response_json[0]['tier'], response_json[0]['rank'], response_json[0]['wins'], response_json[0]['losses']]
         
 def extract_matches(summoner_name):
     puuid = extract_puuid(summoner_name)
