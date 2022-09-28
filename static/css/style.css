@@ -2,7 +2,20 @@
     display: flex;
 }
 
+.tohome {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
 .tier {
     padding-left: 100px;
     padding-right: 30px;
+}
+
+.win {
+    color: skyblue;
+}
+
+.loss {
+    color: tomato;
 }
